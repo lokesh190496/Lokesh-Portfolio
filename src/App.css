@@ -61,3 +61,27 @@ body {
 .navbar-transparent .navbar-brand img {
   filter: brightness(1.2) sepia(1) hue-rotate(15deg) saturate(3);
 }
+
+/* styles.css or inline if using style={{}} */
+.contact-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.contact-label {
+  font-weight: 500;
+}
+
+.contact-btn {
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056d2;
+}
