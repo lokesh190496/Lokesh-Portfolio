@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AppNavbar = () => {
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm">
+    <Navbar expand="lg" className="navbar-transparent shadow-sm">
       <Container>
         {/* Logo on the left */}
         <Navbar.Brand as={Link} to="/">
@@ -15,6 +15,7 @@ const AppNavbar = () => {
             className="d-inline-block align-top"
             alt="React Logo"
           />{' '}
+          <span className="brand-text">MyPortfolio</span>
         </Navbar.Brand>
 
         {/* Responsive toggle */}

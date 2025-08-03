@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+#particles canvas{
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #0a0f1c;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Transparent dark navbar that overlays nicely on dark backgrounds */
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+  backdrop-filter: blur(6px); /* Optional: gives a frosted glass effect */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-transparent .nav-link,
+.navbar-transparent .navbar-brand,
+.navbar-transparent .brand-text {
+  color: white !important;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-transparent .nav-link:hover {
+  color: #cccccc !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Optional: style brand text if you use it */
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.85); /* solid dark */
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1rem;
+  font-family: 'Georgia', serif; /* or use Playfair, Lora, or another elegant serif */
+}
+
+.navbar-transparent .nav-link,
+.navbar-transparent .navbar-brand,
+.navbar-transparent .brand-text {
+  color: #FFD700 !important;  /* gold yellow */
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-transparent .nav-link:hover {
+  color: #FFEB3B !important;  /* bright yellow on hover */
+  text-decoration: underline;
+}
+
+.navbar-transparent .navbar-brand img {
+  filter: brightness(1.2) sepia(1) hue-rotate(15deg) saturate(3);
 }
