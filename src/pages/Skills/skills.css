@@ -1,0 +1,68 @@
+/* Skills section */
+.skills-section {
+  background-color: #0a0f1c;
+  padding: 60px 0;
+  color: #e0e0e0;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.skills-subtitle {
+  font-size: 1rem;
+  color: #bbbbbb;
+  margin-bottom: 40px;
+}
+
+/* Skill card wrapper */
+.skill-card {
+  background-color: #111827;
+  padding: 20px;
+  border-radius: 16px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px var(--hover-glow, #ffffff);
+}
+
+/* Box inside the card */
+.skill-box {
+  background-color: #111827;
+  padding: 10px 0;
+}
+
+/* Icon circle with solid border */
+.skill-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* border: 2px solid #e0e0e0; */
+  background-color: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+/* Icon inside the circle */
+.skill-icon {
+  font-size: 28px;
+  color: #0a0f1c;
+}
+
+/* Skill name below icon */
+.skill-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
