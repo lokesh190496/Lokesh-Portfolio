@@ -13,9 +13,11 @@ code {
 }
 
 html, body, #root, .App {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: black;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

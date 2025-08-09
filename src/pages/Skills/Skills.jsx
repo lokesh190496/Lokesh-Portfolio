@@ -15,6 +15,8 @@ import { SiRedux, SiMui, SiMongodb } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 
 import "./skills.css"; // Ensure this file is present
+import PageHeaderContent from "../../components/PageheaderContent/PageHeaderContent";
+import { BsInfoCircleFill } from "react-icons/bs";
 
 const skillsData = [
   { name: "React.js", icon: <FaReact />, color: "#61DAFB" },
@@ -35,11 +37,11 @@ const skillsData = [
 
 const Skills = () => (
   <section id="skills" className="skills-section">
+          <PageHeaderContent
+        headertext=" My Skills"
+        icon={<BsInfoCircleFill size={40} />}
+      />
     <Container>
-      <h2 className="skills-title">My Skills</h2>
-      <p className="skills-subtitle">
-        Technologies I work with to build web applications.
-      </p>
       <Row className="justify-content-center">
         {skillsData.map((skill, index) => (
           <Col
