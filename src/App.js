@@ -12,13 +12,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 
 function App() {
-  const location = useLocation()
-  console.log("location", location)
+  const location = useLocation();
+  const showParticles = location.pathname === "/";
 
-  const renderParticleLocationpage = location.pathname ==="/"
   return (
     <div className="App">
-      {renderParticleLocationpage && <ParticlesBackground id="particles"/>}
+      {showParticles && <ParticlesBackground id="particles" />}
       <AppNavbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,35 +1,39 @@
 import React from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
-const AppNavbar = () => {
+const PortfolioNavbar = () => {
+  const location = useLocation();
+
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/contact', label: 'Contact' }
+  ];
+
   return (
-    <Navbar expand="lg" className="navbar-transparent shadow-sm">
+    <Navbar expand="lg" fixed="top" className="navbar-custom">
       <Container>
-        {/* Logo on the left */}
-        <Navbar.Brand as={Link} to="/">
-          <img
-            src="/logo.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="React Logo"
-          />{' '}
-          <span className="brand-text">MyPortfolio</span>
+        <Navbar.Brand as={Link} to="/" className="navbar-brand">
+          PORTFOLIO
         </Navbar.Brand>
-
-        {/* Responsive toggle */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-        {/* Nav Links on the right */}
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} to="/skills">Skills</Nav.Link>
-            <Nav.Link as={Link} to="/experience">Experience</Nav.Link>
-            <Nav.Link as={Link} to="/portfolio">Portfolio</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            {navItems.map((item) => (
+              <Nav.Link
+                as={Link}
+                key={item.path}
+                to={item.path}
+                className={location.pathname === item.path ? 'active' : ''}
+              >
+                {item.label}
+              </Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -37,4 +41,4 @@ const AppNavbar = () => {
   );
 };
 
-export default AppNavbar;
+export default PortfolioNavbar;

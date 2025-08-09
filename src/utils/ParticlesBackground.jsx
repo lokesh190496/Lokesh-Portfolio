@@ -1,109 +1,69 @@
-
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-// import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
 
-
-
-const ParticlesBackground = (props) => {
-
+const ParticlesBackground = ({ id }) => {
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    }).then(() => setInit(true));
   }, []);
 
   const particlesLoaded = (container) => {
     console.log(container);
   };
 
-
   const options = useMemo(
     () => ({
       background: {
         color: {
-          value: "#04060dff",
+          value: "#0b2c3d", // Deep blue like screenshot
         },
       },
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: 'grab',
-          },
+          onClick: { enable: true, mode: "push" },
+          onHover: { enable: true, mode: "grab" },
         },
         modes: {
-          push: {
-            distance: 200,
-            duration: 15,
-          },
-          grab: {
-            distance: 150,
-          },
+          push: { quantity: 4 }, // Number of particles on click
+          grab: { distance: 150 },
         },
       },
       particles: {
-        color: {
-          value: "#FFFFFF",
-        },
+        color: { value: "#FFFFFF" },
         links: {
           color: "#FFFFFF",
           distance: 150,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.15, // Subtle lines
           width: 1,
         },
         move: {
           direction: "none",
           enable: true,
-          outModes: {
-            default: "bounce",
-          },
+          outModes: { default: "bounce" },
           random: true,
-          speed: 1,
+          speed: 1.5, // Slightly faster for a lively background
           straight: false,
         },
         number: {
-          density: {
-            enable: true,
-          },
-          value: 150,
+          density: { enable: true, area: 800 },
+          value: 250, // Increased particle count for fuller background
         },
-        opacity: {
-          value: 1.0,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 3 },
-        },
+        opacity: { value: 0.9 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 2 } }, // Smaller so more fit without clutter
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
-
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return <Particles id={id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesBackground;

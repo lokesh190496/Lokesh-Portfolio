@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,14 +9,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-html, body, #root, .App {
-  height: auto;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  overflow-x: hidden;
-  overflow-y: auto;
 }

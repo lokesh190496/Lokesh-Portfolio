@@ -1,102 +1,48 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* optional for horizontal */
-  overflow-y: auto;
-  height: 100%;
-}
-
-#particles canvas{
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
+/* Global body styles */
 body {
-  font-family: 'Playfair Display', serif;
-  background-color: #0a0f1c;
-  color: #e0e0e0;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b2c3d;
+  color: white;
 }
 
-h1, h2, h3, h4, h5 ,h6 .section-title {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
+/* Navbar */
+.navbar {
+  background: transparent !important;
+  padding: 20px 50px;
+}
+
+.navbar-brand {
+  color: #4ad6e7 !important;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
-
-/* Transparent dark navbar that overlays nicely on dark backgrounds */
-.navbar-transparent {
-  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
-  backdrop-filter: blur(6px); /* Optional: gives a frosted glass effect */
-}
-
-.navbar-transparent .nav-link,
-.navbar-transparent .navbar-brand,
-.navbar-transparent .brand-text {
+.navbar-nav .nav-link {
   color: white !important;
-}
-
-.navbar-transparent .nav-link:hover {
-  color: #cccccc !important;
-}
-
-/* Optional: style brand text if you use it */
-.brand-text {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.navbar-transparent {
-  background-color: rgba(0, 0, 0, 0.85); /* solid dark */
-  backdrop-filter: blur(4px);
-  padding: 0.75rem 1rem;
-  font-family: 'Georgia', serif; /* or use Playfair, Lora, or another elegant serif */
-}
-
-.navbar-transparent .nav-link,
-.navbar-transparent .navbar-brand,
-.navbar-transparent .brand-text {
-  color: #FFD700 !important;  /* gold yellow */
-  text-transform: uppercase;
-  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  transition: color 0.3s ease;
 }
 
-.navbar-transparent .nav-link:hover {
-  color: #FFEB3B !important;  /* bright yellow on hover */
-  text-decoration: underline;
+.navbar-nav .nav-link:hover {
+  color: #4ad6e7 !important;
 }
 
-.navbar-transparent .navbar-brand img {
-  filter: brightness(1.2) sepia(1) hue-rotate(15deg) saturate(3);
+/* Hero Section Wrapper (particles behind it) */
+.home-wrapper {
+  position: relative;
+  z-index: 1;
 }
 
-/* styles.css or inline if using style={{}} */
-.contact-card {
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-}
-
-.contact-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-}
-
-.contact-label {
-  font-weight: 500;
-}
-
-.contact-btn {
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #0056d2;
+/* Hero Section Container */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
 }
