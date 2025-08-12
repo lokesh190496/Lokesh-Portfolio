@@ -45,7 +45,7 @@ const About = () => {
       <Container>
         <Row className="align-items-center">
           {/* LEFT COLUMN */}
-          <Col md={6} className="mb-4">
+          <Col md={7} className="mb-4">
             <Animate
               play
               duration={1.5}
@@ -90,7 +90,7 @@ const About = () => {
           </Col>
 
           {/* RIGHT COLUMN: Combined rotating icons */}
-          <Col md={6}>
+          <Col md={5}>
             <Animate
               play
               duration={1.5}

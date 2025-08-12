@@ -8,8 +8,10 @@ import {
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
-import { BsInfoCircleFill } from 'react-icons/bs';
+import { BsEnvelopeFill, BsInfoCircleFill } from 'react-icons/bs';
 import PageHeaderContent from '../../components/PageheaderContent/PageHeaderContent';
+import "./contact.css";
+import { MdContactMail } from 'react-icons/md';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,10 +48,10 @@ const Contact = () => {
 
   return (
     <>
-      <section id='Contact' className='contact'>
+      <section id='contact' className='contact-section'>
         <PageHeaderContent
           headertext="Contact"
-          icon={<BsInfoCircleFill size={40} />}
+          icon={<MdContactMail size={40} />}
         />
       </section>
 
@@ -57,7 +59,7 @@ const Contact = () => {
         <Row className="g-4">
           {/* Left Side */}
           <Col md={5}>
-            <Card bg="dark" text="white" className="p-4 contact-card h-100">
+            <Card bg="dark" text="white" className="p-4 contact-card h-100 shadow-sm">
               <h4 className="mb-4">📬 Get in Touch</h4>
               <p><FaUser className="me-2" /> <strong>S D LOKESH</strong></p>
               <p><FaPhoneAlt className="me-2 text-warning" /> +91 8309966782</p>
@@ -68,27 +70,55 @@ const Contact = () => {
 
           {/* Right Side */}
           <Col md={7}>
-            <Card className="p-4 bg-light contact-card text-dark">
+            <Card className="p-4 bg-light contact-card text-dark shadow-sm">
               <h4 className="text-center contact-title mb-4">Have a question? Send a message.</h4>
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleSubmit} noValidate>
                 <Form.Group className="mb-3" controlId="formName">
                   <Form.Label className="contact-label"><FaUser className="me-2" />Your Name</Form.Label>
-                  <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your full name"
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label className="contact-label"><FaEnvelope className="me-2" />Your Email</Form.Label>
-                  <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your email"
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPhone">
                   <Form.Label className="contact-label"><FaPhoneAlt className="me-2" />Your Phone</Form.Label>
-                  <Form.Control type="tel" name="phone" value={formData.phone} onChange={handleChange} />
+                  <Form.Control
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number (optional)"
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-4" controlId="formMessage">
                   <Form.Label className="contact-label"><FaCommentDots className="me-2" />Your Message</Form.Label>
-                  <Form.Control as="textarea" rows={4} name="message" value={formData.message} onChange={handleChange} required />
+                  <Form.Control
+                    as="textarea"
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Write your message here"
+                  />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className="w-100 contact-btn">

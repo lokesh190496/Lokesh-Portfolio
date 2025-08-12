@@ -1,36 +1,43 @@
-/* .experience {
-  background-color: #0a0f1c;
-  padding: 60px 0;
-  color: #ffffff;
-} */
+.experience {
+  /* padding: 60px 0; */
+  color: #e1e9f0;
+  min-height: 100vh;
+}
+
+/* NEW: Container for consistent horizontal alignment */
+.section-container {
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 .timeline-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 40px 20px;
   gap: 30px;
+  padding: 40px 0;
 }
 
 .timeline-column {
   flex: 1 1 45%;
   position: relative;
-  padding-left: 30px;
+  padding-left: 0;
 }
 
 .timeline-title {
   font-size: 1.6rem;
   margin-bottom: 40px;
-  border-bottom: 2px solid #ffcc00;
+  border-bottom: 2px solid #a0d2eb;
   display: inline-block;
-  color: #ffcc00;
+  color: #a0d2eb;
   text-transform: uppercase;
 }
 
 .timeline-item {
   position: relative;
   padding: 20px 20px 20px 40px;
-  border-left: 2px solid #ffcc00;
+  border-left: 2px solid #a0d2eb;
   margin-bottom: 40px;
 }
 
@@ -40,39 +47,65 @@
   left: -18px;
   width: 36px;
   height: 36px;
-  background-color: #0a0f1c;
-  border: 2px solid #ffcc00;
+  background-color: #0f4c75;
+  border: 2px solid #a0d2eb;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffcc00;
+  color: #a0d2eb;
   z-index: 1;
+  font-size: 1.2rem;
 }
 
 .timeline-content {
-  background-color: #111827;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 15px 20px;
   border-radius: 8px;
-  border: 1px solid #ffcc00;
-  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.1);
+  border: 1px solid #a0d2eb;
+  box-shadow: 0 4px 10px rgba(160, 210, 235, 0.2);
 }
 
 .timeline-content h4 {
   margin: 0 0 6px;
   font-size: 1.1rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #e1e9f0;
 }
 
 .timeline-content p {
   margin: 4px 0;
-  color: #bbbbbb;
+  color: #cbd6e5;
 }
 
 .timeline-content .tech {
   font-size: 0.9rem;
-  color: #dddddd;
+  color: #dbe9f4;
 }
 
+/* Optional: Different background for education icons */
+.timeline-item:nth-child(even) .timeline-icon {
+  background-color: #1b98e0;
+}
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .timeline-column {
+    flex: 1 1 100%;
+    padding-left: 0;
+  }
+
+  .timeline-title {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .timeline-item {
+    padding-left: 40px; /* keep space for icon */
+  }
+}

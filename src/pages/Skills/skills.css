@@ -1,47 +1,81 @@
-/* Skill card wrapper */
+/* Skill card without animation but with clean shadow & spacing */
 .skill-card {
-  background-color: #111827;
-  padding: 20px;
-  border-radius: 16px;
-  width: 120px;
+  background: #1e2d3a;
+  border-radius: 15px;
+  padding: 25px 15px 20px;
+  width: 100%;
+  max-width: 150px;
   text-align: center;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.3);
   cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
-.skill-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px var(--hover-glow, #ffffff);
+.skill-card:hover,
+.skill-card:focus {
+  background-color: #29415a;
 }
 
-/* Box inside the card */
-.skill-box {
-  background-color: #111827;
-  padding: 10px 0;
-}
-
-/* Icon circle with solid border */
 .skill-icon-circle {
-  width: 60px;
-  height: 60px;
+  background-color: rgba(255, 255, 255, 0.13);
   border-radius: 50%;
-  /* border: 2px solid #e0e0e0; */
-  background-color: currentColor;
-  display: flex;
+  padding: 20px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 12px auto;
+  margin-bottom: 15px;
+  width: 70px;
+  height: 70px;
+  user-select: none;
 }
 
-/* Icon inside the circle */
 .skill-icon {
-  font-size: 28px;
-  color: #0a0f1c;
+  font-size: 2.8rem;
+  user-select: none;
 }
 
-/* Skill name below icon */
+@media (max-width: 576px) {
+  .skill-icon {
+    font-size: 2rem;
+  }
+  .skill-card {
+    max-width: 120px;
+    padding: 20px 10px 15px;
+  }
+  .skill-icon-circle {
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+}
+
 .skill-name {
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+/* Progress bar styles */
+.skill-progress {
+  background: #233142;
+  height: 7px;
+  border-radius: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  height: 7px;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  user-select: none;
+}
+
+/* Focus visible for accessibility */
+.skill-card:focus-visible {
+  outline: 2px solid #5a9bd6;
+  outline-offset: 3px;
 }

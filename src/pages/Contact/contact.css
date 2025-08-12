@@ -1,0 +1,32 @@
+.contact-card {
+  border-radius: 15px;
+}
+
+.contact-title {
+  font-weight: 700;
+  color: #0f4c75;
+}
+
+.contact-label {
+  font-weight: 600;
+}
+
+.contact-btn {
+  font-weight: 600;
+  background-color: #0f4c75;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover,
+.contact-btn:focus {
+  background-color: #083757;
+  box-shadow: 0 0 10px #083757aa;
+  outline: none;
+}
+
+@media (max-width: 576px) {
+  .contact-card {
+    padding: 20px !important;
+  }
+}
