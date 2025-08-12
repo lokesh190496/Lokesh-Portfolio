@@ -108,3 +108,17 @@
 @keyframes rotate {
   100% { transform: rotate(360deg); }
 }
+
+section {
+  min-height: 100dvh; 
+}
+
+section > :last-child {
+  margin-bottom: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
